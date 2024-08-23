@@ -1,8 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 
-import { dbConnection } from '../database/config.js';
-
 import { envs } from "../config/envs.js";
 import routes from "../routes/index.js";
 import { errorHandler } from '../middlewares/errorHandler.js';
@@ -17,19 +15,12 @@ export default class Server {
 
         this.pathRoutes = '/api';
 
-        // Connect to database
-        this.connectDB();
-
         // Middlewares
         this.middlewares();
 
         // Routes
         this.routes();
 
-    }
-
-    async connectDB() {
-        await dbConnection();
     }
 
     middlewares() {
