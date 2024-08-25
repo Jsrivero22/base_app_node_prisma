@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import { envs } from "../config/envs.js";
-import routes from "../routes/index.js";
+import { AppRoutes } from "../routes/index.js";
 import { errorHandler } from '../middlewares/errorHandler.js';
 
 export default class Server {
@@ -40,7 +40,7 @@ export default class Server {
     }
 
     routes() {
-        this.app.use( this.pathRoutes, routes );
+        this.app.use( this.pathRoutes, AppRoutes.routes );
     }
 
     listen() {
