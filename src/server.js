@@ -2,8 +2,8 @@ import express from 'express';
 import cors from 'cors';
 
 import { envs } from "../config/envs.js";
-import { AppRoutes } from "../routes/index.js";
-import { errorHandler } from '../middlewares/errorHandler.js';
+import { AppRoutes } from "./routes/index.js";
+import { errorHandler } from './middlewares/errorHandler.js';
 
 export default class Server {
 
